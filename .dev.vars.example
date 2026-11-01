@@ -1,0 +1,16 @@
+# Copy to .dev.vars for local development only. Never commit actual values.
+# Production: use `npx wrangler secret put NAME` for each sensitive value.
+FEISHU_WEBHOOK_URL="https://open.feishu.cn/open-apis/bot/v2/hook/REPLACE_ME"
+FEISHU_SIGNING_SECRET=""
+APP_STORE_CONNECT_WEBHOOK_SECRET=""
+APP_STORE_BUNDLE_ID=""
+APP_STORE_APPLE_ID=""
+# JSON array of base64-encoded DER Apple root certificates from Apple PKI.
+APPLE_ROOT_CERTIFICATES="[]"
+APP_DISPLAY_NAME="App Store"
+# Optional: JSON array of Feishu open IDs. `all` explicitly mentions everyone.
+FEISHU_MENTION_USER_IDS="[]"
+# Event names that trigger mentions; e.g. ["REFUND", "DID_FAIL_TO_RENEW", "REJECTED"].
+FEISHU_MENTION_EVENTS="[]"
+FEISHU_MESSAGE_KEYWORD="App Store"
+APPLE_ENABLE_ONLINE_CHECKS="true"

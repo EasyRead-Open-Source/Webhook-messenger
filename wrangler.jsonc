@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "app-store-feishu",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-30",
+  "send_metrics": false,
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "durable_objects": {
+    "bindings": [{ "name": "DELIVERY_QUEUE", "class_name": "DeliveryQueue" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DeliveryQueue"] }],
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "invocation_logs": false }
+  },
+  "vars": {
+    "APPLE_ENABLE_ONLINE_CHECKS": "true",
+    "FEISHU_MESSAGE_KEYWORD": "App Store",
+    "FEISHU_MENTION_EVENTS": "[]"
+  }
+}
